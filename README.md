@@ -101,10 +101,7 @@ debtRewards
 
 User private variable factor, which represents the amount of reward that needs to be excluded when calculating the user's reward,  represented by user.debtRewards. 
 
-
-其中
-
-数学公式: $ shareAcc_{pool} = shareAcc_{pool} + \frac{f_{rewards}\left\{ from, to \right\}}{totalStakingAsset_{pool}} $
+$$ shareAcc_{pool} = shareAcc_{pool} + \frac{f_{rewards}\left\{ from, to \right\}}{totalStakingAsset_{pool}} $$
 In the above formula, the initial value of 数学公式: $ shareAcc_{pool} $ is 0  and 数学公式: $ f_{rewards}\left\{ from, to \right\} $ represents the newly generated cToken at a certain block height. This value is specified when creating a staking economy. 数学公式: $ totalStakingAsset_{pool} $ represents the total amount of staking assets in the current pool.
 数学公式: $ user.debtRewards = user.amount * shareAcc_{pool} $
 In the above formula, user.amount represents the amount of staking assets of the user.
