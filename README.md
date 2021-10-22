@@ -10,7 +10,8 @@ The popularity of the PoS consensus algorithm数学公式: $ [1] $ provides us w
 Unfortunately, this economic model is currently only used in the consensus system of the blockchain network itself. It does not bring direct value to the applications, that is, the communities running in the blockchain network.
 What Nutbox is trying to do is to build an open asset staking protocol that allows the blockchain community to build an economic model of the staking for its community assets in a blockchain network based on the POS consensus algorithm.
 
-![staking-factory](https://user-images.githubusercontent.com/15071907/138416058-bb763e71-6cf2-4118-a2d6-7a8235acc0c1.png)
+![image](https://user-images.githubusercontent.com/15071907/138416634-ab6b3022-2ba0-4900-97e1-44b1fe4aed91.png)
+
 Figure1, A Staking Factory Runing In PoS Blockchain Network
 
 ## 2  Background
@@ -21,7 +22,7 @@ Relaychain is developed and operated by Parity , and everyone can join as a netw
 Parachain is developed by any team or individual. Unlike general blockchain networks, parachain does not have its own consensus system, and parachain blocks are verified by Relaychain. After the parachain block is constructed, it will be broadcast to the Relaychain validator in PoV format, and the verified block will be stored in the parachain network. Polkadot Relaychain is like the security steward of each Parachain, responsible for the consensus security of each Parachain, so that Parachain can focus on its own business.
 
 
-![parachain-framework](https://user-images.githubusercontent.com/15071907/138416090-c1a7af0f-54db-4762-b793-b441c15c695f.png)
+![image](https://user-images.githubusercontent.com/15071907/138416699-c9c47719-82bd-4dd4-819f-ae84fdc0fdaf.png)
 
 Figure2, A Staking Factory Runing In PoS Blockchain Network
 
@@ -44,7 +45,7 @@ When Nutbox runs as a Parachain in the Polkadot ecosystem, part of Nutbox's cros
 OCSP is a standard set of contract templates for deploying a user's asset staking business. With the OCSP contract, a tToken-based asset exchange gateway and a cToken distributor are created, that is, the business logic for users to exchange underlying assets and tTokens, as well as obtain cToken income through tToken-based staking. Here, both tToken and cToken represent two asset categories in the Nutbox network and do not refer to a specific asset.
 
 ### 3.1 Contract Topology
-![contract-topology](https://user-images.githubusercontent.com/15071907/138416146-ae85d45d-7928-4bc8-87e1-94803340e0cd.png)
+![image](https://user-images.githubusercontent.com/15071907/138417483-96435196-573a-4ae4-92f6-f1212b798eb2.png)
 
 Figure2, Contract Topology
 
@@ -63,7 +64,8 @@ On Nutbox, users stake the assets of the original PoS blockchain network to obta
 
 TEG contract (Nutbox is deployed as a contract) and TEG pallet数学公式: $ [5] $ (Nutbox is used as Polkadot Parachain) are responsible for implementing the cross-chain asset exchange gateway of the Nutbox network.
 
-![tToken-exchange-gateway](https://user-images.githubusercontent.com/15071907/138416177-faf7f00c-b093-47b8-995c-3b0595803d8b.png)
+![image](https://user-images.githubusercontent.com/15071907/138417525-b5bcf0dc-0f9d-4724-9032-c9a28dde4e15.png)
+
 Figure4, tToken Exchange Gateway
 
 As shown in the figure above, when a user exchanges a native asset for tToken, the native asset will be locked in the TEG Contract, and LTBSV verifies that if the user's asset is locked [shown in the Deposit proof section for details], when the verification is passed,it will generate a corresponding amount of tToken to the user In the Nutbox account; the TEG contract verifies the user’s tToken burning status when the user redeems it [shown in the tToken Burning Contract section for details], and when the verification is passed, the user’s native assets locked in the TEG Contract will be unlocked.
@@ -75,14 +77,14 @@ The bridge proxy contract is a smart contract deployed by Nutbox to the original
 
 The issuance of tToken requires the user to provide a deposit proof [shown in 4.2.3]. The deposit proof is issued by the LTBSV to the user when the user deposits the original blockchain assets into the Nutbox proxy contract. After the user submits the Deposit proof, TEG's tToken Issue Contract verifies the signature information of the Deposit proof firstly, and the verified Deposit proof is parsed as Deposit MetaData, which contains the amount of the original blockchain assets staked by the user. TEG's tToken Issue Contract then issues the corresponding amount of tToken, and the exchange gateway creates a tToken Issurance Pair for this , which contains the amount of tToken issued, the user's public key, and the unlock time. The tTokens in the lock-up period cannot be exchanged for tokens in the original blockchain network.
 
-![tToken issue](https://user-images.githubusercontent.com/15071907/138416215-5e0c3ea9-7c06-4644-a595-cb6b8b96e47a.png)
+![image](https://user-images.githubusercontent.com/15071907/138417585-0f1dc10c-817c-45cd-ba1a-d433554078fe.png)
 Figure5, tToken Issurance
 
 #### 3.2.4 tToken Burning Contract
 
 When the unlocking time is reached, users can choose to redeem their unlocked tTokens at any time (users who use tTokens to participate in community token mining on Nutbox will also be locked). After the user chooses to burn a certain amount of tToken, TEG’s tToken Burning Contract will burn the same amount of tToken, and Nutbox will issue a Withdraw proof to the user. The proxy contract will verify the Withdraw proof signature information. After the verification is passed, the Withdraw MetaData will be parsed out, which contains the amount of tTokens that the user needs to unlock and the user's public key in the original blockchain. Then, the proxy contract transfers the specified amount of original blockchain assets to the user's original blockchain network account.
 
-![tToken Buning](https://user-images.githubusercontent.com/15071907/138416245-8078b469-3966-4169-8cd8-da5d7a24c9e9.png)
+![image](https://user-images.githubusercontent.com/15071907/138417696-3714ba7a-1b7d-4fca-ba03-f9dde15d0467.png)
 
 Figure6, tToken Burning
 
@@ -184,7 +186,7 @@ It can be seen from the above formula that the consequences of hackers' attacks 
 The current substrate provides the Offchain Worker数学公式: $ [10] $mechanism, which allows nodes to obtain external data through http and perform complex calculations such as encryption and decryption. Offchain Worker has Offchain Storage, which can be accessed directly by runtime, and other pallets can be accessed in Offchain Worker's pallet. At the same time, Offchain Worker can also submit data that requires consensus verification through Signed Transaction and Unsigned Transaction.
 The price oracle based on the Offchain Worker module uses the http protocol to obtain price information from a third-party price provider, calculates the asset price according to the price calculation algorithm, and then submits the price to the Nutbox network.
 
-![OCW Based Price Fetcher Flow](https://user-images.githubusercontent.com/15071907/138416298-654b0b82-9ba2-40d0-a12d-fab80c28154c.png)
+![image](https://user-images.githubusercontent.com/15071907/138417790-daf723e9-3524-40b1-915f-04e7e6bbe42a.png)
 
 Figure6, Offchain Worker Based Price Oracle Flow
 
