@@ -1,0 +1,401 @@
+th,
+ponsived {
+  white-space: nowrap;
+  word-break: keep-all;
+}
+
+.table .table th,
+.table td {
+  border-color: rgba(246, 247, 249, 1) !important;
+}
+
+.table thead th {
+  border-bottom: 1px !important;
+}
+
+.c-tr {
+  border: 1px solid rgba(246, 247, 249, 1);
+}
+.c-tr td {
+  vertical-align: middle;
+}
+.c-tr:hover{
+  background: rgba(255, 219, 38, 0.05) !important;
+}
+
+.c-th {
+  background: rgba(246, 247, 249, 1);
+}
+
+.c-th {
+  border-left: 1px solid rgba(246, 247, 249, 1);
+  border-right: 2px solid rgba(246, 247, 249, 1);
+}
+
+.page-item .page-link {
+  border-color: rgba(246, 247, 249, 1) !important;
+}
+
+.page-item.active .page-link {
+  background: var(--primary-custom) !important;
+  color: rgba(36, 38, 41, 1) !important;
+}
+
+.page-item .page-link {
+  color: rgba(36, 38, 41, 1) !important;
+}
+
+.primary-btn {
+  height: 2.4rem;
+  width: 100%;
+  margin: 0 auto;
+  border-color: transparent;
+  background: var(--primary-custom);
+  box-shadow: 0 8px 12px -4px var(--primary-custom);
+  border-radius: .8rem;
+  font-size: .8rem;
+  font-weight: bold;
+  color: var(--primary-btn-text-color);
+  &:hover {
+    background: rgba(var(--primary-custom-rgb), .7);
+  }
+  &.outline-btn {
+    background: white;
+    border: 1px solid var(--primary-custom);
+    box-shadow: none;
+    color: var(--primary-custom);
+  }
+}
+.primary-btn-outline {
+  background-color: white;
+  border: 1px solid var(--primary-custom);
+  box-shadow: none;
+  color: var(--primary-custom);
+}
+.primary-btn:disabled {
+  background: rgba(227, 229, 232, 1);
+  color: rgba(189, 191, 194, 1);
+  box-shadow: 0 8px 12px -4px rgba(0, 0, 0, 0.1);
+  cursor: not-allowed !important;
+}
+
+.primary-btn:hover {
+  cursor: pointer;
+}
+
+.hover-blue:hover {
+  cursor: pointer;
+  color: var(--link)
+}
+
+.flex-between-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-between-start {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.flex-start-center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.flex-full {
+  flex: 1;
+}
+
+.font56 {
+  font-size: 2.8rem;
+}
+
+.font46 {
+  font-size: 2.3rem;
+}
+
+.font40 {
+  font-size: 2rem;
+}
+
+.font32 {
+  font-size: 1.6rem;
+}
+
+.font28 {
+  font-size: 1.4rem;
+}
+
+.font26 {
+  font-size: 1.3rem;
+}
+
+.font24 {
+  font-size: 1.2rem;
+}
+
+.font20 {
+  font-size: 1rem;
+}
+
+.font18 {
+  font-size: .9rem;
+}
+
+.font16 {
+  font-size: .8rem;
+}
+
+.font14 {
+  font-size: .7rem;
+}
+
+.font12 {
+  font-size: .6rem;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.text-grey-light {
+  color: #BDBFC2;
+}
+
+.text-grey {
+  color: #464A53;
+}
+
+.text-black {
+  color: #242629;
+}
+.text-red {
+  color: #FF5040;
+}
+
+.carousel,
+.carousel-inner,
+.carousel-item {
+  height: 100%;
+  border-radius: 1.4rem;
+}
+
+.carousel-caption {
+  top: 1.4rem;
+  text-shadow: none;
+  text-align: left !important;
+  left: 1.4rem !important;
+  right: 1.4rem !important;
+  z-index: 20;
+}
+
+.custom-modal {
+  .modal-content {
+    border: none;
+    border-radius: 1.4rem;
+  }
+
+  .modal-body {
+    padding: 1.4rem;
+  }
+}
+
+.proposal-pass {
+  background: rgba(80, 191, 0, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(80, 191, 0, 0.3);
+  color: var(--success);
+}
+.proposal-pending {
+  background: rgba(255, 219, 38, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 219, 38, 0.3);
+  color: var(--warning);
+}
+.proposal-unpass {
+  background: rgba(255, 91, 77, 0.051);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 91, 77, 0.3);
+  color: var(--error);
+}
+.proposal-rolling {
+  background: #408fff0d;
+  border-radius: 8px;
+  border: 1px solid #408fff4d;
+  color: var(--link);
+}
+
+.empty-bg{
+  padding: 4rem;
+  text-align: center;
+  img{
+    height: 7rem;
+  }
+}
+
+input,textarea
+button {
+  outline: none;
+}
+.btn {
+  padding: .6rem 1.2rem!important;
+}
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+input:focus, textarea:focus {
+  outline: none;
+  box-shadow: none!important;
+}
+[role="button"] {
+  outline: none;
+}
+.c-form-label label {
+  color: #717376;
+  margin-bottom: .4rem;
+}
+
+.dropdown {
+  outline: none;
+}
+
+.boder-bottom{
+  border-bottom: 1px solid var(--dividers);
+}
+h3 {
+  padding-top: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.8rem;
+  margin: 0 !important;
+}
+.spinner-grow {
+  margin-bottom: .1rem;
+  margin-right: .4rem;
+}
+input {
+  border: none;
+  outline: none;
+}
+input::-webkit-input-placeholder {
+  color: var(--disable);
+}
+
+.mask {
+  z-index: 2000;
+  overflow: hidden;
+  display: flex;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary {
+  font-size: 16px;
+  border-radius: 16px !important;
+  box-shadow: 0px 8px 12px -4px var(--primary-custom);
+  border: 0px !important;
+  padding: 12px 24px;
+  font-weight: 600;
+  color: var(--primary-text) !important;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover) !important;
+}
+.table thead th {
+  border-top: 0;
+}
+.table th, .table td {
+  white-space: nowrap;
+}
+.pagination li {
+  margin: 0 .2rem;
+}
+#mint-checkbox .custom-control-label {
+  line-height: 1.5rem;
+}
+#mint-checkbox .custom-control-label::before{
+  border-radius: 1rem;
+}
+#mint-checkbox .custom-control-label::after{
+  border-radius: 1rem;
+}
+.custom-file-input, .custom-file-label {
+  width: 100%!important;
+  height: 100%!important;
+  background-color: #F6F7F9!important;
+  border: 1px solid #E3E5E8!important;
+  padding: 0!important;
+  box-sizing: content-box;
+}
+.custom-file-label::after{
+  display: none!important;
+  //content: ''!important;
+  //padding: 0!important;
+}
+.form-file-text {
+  width: 100%;
+  height: 100%;
+}
+.logo-form .custom-file {
+  width: 6rem;
+  height: 6rem;
+}
+.logo-form .custom-file-input, .logo-form .custom-file-label {
+  border-radius: 50%;
+}
+
+.cover-form .custom-file {
+  width: 100%;
+  height: 6rem;
+}
+.cover-form .custom-file-input, .cover-form .custom-file-label {
+  border-radius: .8rem;
+}
+@import "dropdown";
+
+.cropper-container {
+  height: 500px;
+  max-height: 100%;
+  position: relative;
+  overflow: scroll;
+  canvas {
+    opacity: 0;
+  }
+  .vue-cropper {
+    position: absolute!important;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+}
+.cropper-rounded-circle .cropper-crop-box {
+  border-radius: 50%;
+}
+.cropper-rounded-circle .cropper-view-box {
+  border-radius: 50%;
+}
+.crop-btn-group {
+  padding: 1.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  button {
+    box-shadow: none;
+    width: fit-content;
+    padding: 0 2rem;
+  }
+}
